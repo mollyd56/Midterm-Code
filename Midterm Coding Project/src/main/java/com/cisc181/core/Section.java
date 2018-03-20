@@ -39,5 +39,13 @@ public class Section {
 	public void setRoomID(int roomID) {
 		this.roomID = roomID;
 	}
+	public void add(Enrollment enrollment) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Enrollment get(int k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

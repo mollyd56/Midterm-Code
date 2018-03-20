@@ -2,8 +2,15 @@ package com.cisc181.core;
 
 public class PersonException extends Exception {
 
-	public PersonException(String message) {
-        super(message);
-    }
+	private Person person;
+	
+	public PersonException(Person person){
+		this.person = person;
+	}
+
+	public Person getperson() {
+		return person;
+	}
+	
 	
 }
