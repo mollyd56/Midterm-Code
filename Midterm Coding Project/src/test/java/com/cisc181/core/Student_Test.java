@@ -169,6 +169,6 @@ public class Student_Test {
 	@Test
 	public void testGPA() {
 		
-		assertEquals(getGPA(enrollment.get(0).getStudentID()), 4.0, 0.1);
+		assertEquals(getGPA(enrollment.get(0).getStudentID()), 4.0);
 	}
 }
