@@ -41,11 +41,9 @@ public class Section {
 	}
 	public void add(Enrollment enrollment) {
 		// TODO Auto-generated method stub
-		
 	}
 	public Enrollment get(int k) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

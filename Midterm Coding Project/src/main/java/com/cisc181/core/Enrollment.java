@@ -8,8 +8,7 @@ public class Enrollment {
 	private UUID enrollmentID;
 	private double grade;
 	
-	private void Enrollment() {
-		
+	private void Enrollment() {	
 	}
 	public Enrollment(UUID sectionID, UUID studentID) {
 		this.enrollmentID = UUID.randomUUID();

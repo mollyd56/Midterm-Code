@@ -7,10 +7,7 @@ public class PersonException extends Exception {
 	public PersonException(Person person){
 		this.person = person;
 	}
-
 	public Person getperson() {
 		return person;
 	}
-	
-	
 }

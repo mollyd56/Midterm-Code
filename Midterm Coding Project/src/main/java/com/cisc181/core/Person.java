@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public abstract class Person implements java.io.Serializable {
 
 	private Date DOB;
@@ -19,86 +18,64 @@ public abstract class Person implements java.io.Serializable {
 	public String getFirstName() {
 		return FirstName;
 	}
-
 	public void setFirstName(String FirstName) {
 		this.FirstName = FirstName;
 	}
-
 	public String getMiddleName() {
 		return MiddleName;
 	}
-
 	public void setMiddleName(String MiddleName) {
 		this.MiddleName = MiddleName;
 	}
-
 	public String getLastName() {
 		return LastName;
 	}
-
 	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}
-
 	public Date getDOB() {
 		return DOB;
 	}
-
 	public void setDOB(Date DOB) throws PersonException {
-		final int YEAR_REST = 100;
+		final int YR = 100;
 		Calendar thisYear = Calendar.getInstance();
 		Calendar dobYear = Calendar.getInstance();
 		dobYear.setTime(DOB);
 		int curYr = dobYear.get(Calendar.YEAR);
-		if (thisYear.get(Calendar.YEAR) - curYr >= YEAR_REST) { // if DOB is over 100 years of the current date then exception is thrown
+		if (thisYear.get(Calendar.YEAR) - curYr >= YR) { // if DOB is over 100 years of the current date then exception is thrown
 			throw new PersonException(this);
 		} else {
 			this.DOB = DOB;
 		}
 	}
-
 	public void setAddress(String newAddress) {
 		address = newAddress;
 	}
-
 	public String getAddress() {
 		return address;
 	}
-
 	public void setPhone(String newPhone_number) throws PersonException {
 		String regex = "^\\({1}([0-9]{3})\\){1}-{1}([0-9]{3})-{1}([0-9]{4})$";
-		boolean x = Pattern.matches(regex, newPhone_number);
-		if (x) {
+		boolean z = Pattern.matches(regex, newPhone_number);
+		if (z) {
 			this.phone_number = newPhone_number;
 			} 
 		else {
 			throw new PersonException(this);
 		}
 	}
-
 	public String getPhone() {
 		return phone_number;
 	}
-
 	public void setEmail(String newEmail) {
 		email_address = newEmail;
 	}
-
 	public String getEmail() {
 		return email_address;
 	}
-
-	/*
-	 * Constructors No Arg Constructor
-	 */
 	public Person() {
 
 	}
-
-	/*
-	 * Constructors Constructor with arguments
-	 */
-
 	public Person(String FirstName, String MiddleName, String LastName, Date DOB, String Address, String Phone_number, String Email) throws PersonException {
 		this.FirstName = FirstName;
 		this.MiddleName = MiddleName;
@@ -106,19 +83,15 @@ public abstract class Person implements java.io.Serializable {
 		this.setDOB(DOB);
 		this.address = Address;
 		this.setPhone(Phone_number);
-		this.email_address = Email;
-		
+		this.email_address = Email;	
 	}
-
 	public void PrintName() {
 		System.out.println(this.FirstName + ' ' + this.MiddleName + ' '
 				+ this.LastName);
 	}
-
 	public void PrintDOB() {
 		System.out.println(this.DOB);
 	}
-
 	public int PrintAge() {
 		Calendar today = Calendar.getInstance();
 		Calendar birthDate = Calendar.getInstance();
@@ -146,7 +119,5 @@ public abstract class Person implements java.io.Serializable {
 		System.out.println("age is " + age);
 
 		return age;
-
-    }
-        
+    }     
 }

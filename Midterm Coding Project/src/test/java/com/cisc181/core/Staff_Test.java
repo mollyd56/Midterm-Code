@@ -38,20 +38,19 @@ public class Staff_Test {
 	}
 	//exception for invalid DOB
 	@Test(expected = PersonException.class)
-	public void testDOBException() throws PersonException {
-
+	public void testingDOBException() throws PersonException {
 		new Staff("Bob", "Tan", "Man", newDate(1890, 3, 29), "Cavalier Road", "(508)-222-4654",
 				"bobby@udel.edu", "TH 12:00-1:15pm", 4, 49300, newDate(2000, 4, 19), eTitle.MR);
 	}
 	//exception for invalid phone number
 	@Test(expected = PersonException.class)
-	public void testPhoneNumException() throws PersonException {
+	public void testingPhoneException() throws PersonException {
 		new Staff("Bob", "Tan", "Man", newDate(1945, 3, 29), "Cavalier Road", "508-222-4654",
 				"bobby@udel.edu", "TH 12:00-1:15pm", 4, 49300, newDate(2000, 4, 19), eTitle.MR);
 	}
 	
 	@Test
-	public void testStaffSalary() throws PersonException {
+	public void testingSalaryException() throws PersonException {
 		double sum = 0;
 		for (Staff avgStaff : staff) {
 			sum += avgStaff.getSalary();

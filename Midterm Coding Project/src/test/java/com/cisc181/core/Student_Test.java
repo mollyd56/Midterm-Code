@@ -92,8 +92,8 @@ public class Student_Test {
 		//possible grades in each course
 		ArrayList<Integer> grades1 = new ArrayList<Integer>(Arrays.asList(100, 94, 88, 88, 79, 78, 78, 70, 65, 62));
 		ArrayList<Integer> grades2 = new ArrayList<Integer>(Arrays.asList(99, 93, 88, 87, 83, 83, 79, 78, 70, 58));
-		ArrayList<Integer> grades3 = new ArrayList<Integer>(Arrays.asList(100, 92, 87, 87, 87, 85, 82, 77, 70, 60));
-		//assigns students grades
+		ArrayList<Integer> grades3 = new ArrayList<Integer>(Arrays.asList(100, 92, 87, 87, 87, 85, 82, 77, 70, 60));	
+		//enrolls students and assigns grades
 		for (int k = 0; k < students.size(); k++) {
 
 			fallNurs.add(new Enrollment(sections.get(0).getSectionID(), students.get(k).getStudentID()));
@@ -115,21 +115,11 @@ public class Student_Test {
 			springChem.get(k).setGrade(grades3.get(k));
 		}
 	}
-		public static double AvgCourseGrade(ArrayList<Enrollment> courses) {
-
-			double average = 0;
-			double courseAverage = 0;
-
-			for (int y = 0; y < students.size(); y++) { 
-				average += courses.get(y).getGrade();
-				courseAverage = (average / students.size());
-			}
-			return courseAverage;
-	}
+		
 		public double getGPA(UUID id) {
 			
 			double GPA = 0.00;
-			
+			//based on the UD GPA system
 			for (Enrollment enrollment : enrollment) {
 				
 				if (enrollment.getStudentID() == id) {
@@ -164,7 +154,18 @@ public class Student_Test {
 
 			return GPA;
 		}
+		//finds the average course grade
+		public static double AvgCourseGrade(ArrayList<Enrollment> courses) {
 
+			double average = 0;
+			double courseAverage = 0;
+
+			for (int y = 0; y < students.size(); y++) { 
+				average += courses.get(y).getGrade();
+				courseAverage = (average / students.size());
+			}
+			return courseAverage;
+	}
 	@Test
 	public void testGPA() {
 		
